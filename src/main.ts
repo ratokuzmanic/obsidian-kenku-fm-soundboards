@@ -15,6 +15,13 @@ export default class KenkuFmSoundboardsPlugin extends Plugin {
     this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
     this.addSettingTab(new SettingsTab(this.app, this));
     this.sounds = await getSounds(this.settings.baseUrl);
+
+    this.addCommand({
+      id: 'kenku-fm-soundboards-reload-sounds',
+      name: 'Reload sounds',
+      callback: async () =>
+        (this.sounds = await getSounds(this.settings.baseUrl))
+    });
   }
 
   async saveSettings() {
