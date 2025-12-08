@@ -2,7 +2,7 @@ import { Plugin } from 'obsidian';
 import SettingsTab from './Settings';
 import Commands from './Commands';
 import { getSounds } from './kenku';
-import { KenkuFmSettings, Sounds } from './types';
+import { KenkuFmSettings, Sound } from './types';
 
 const DEFAULT_SETTINGS: KenkuFmSettings = {
   baseUrl: 'http://127.0.0.1:3333'
@@ -10,7 +10,7 @@ const DEFAULT_SETTINGS: KenkuFmSettings = {
 
 export default class KenkuFmSoundboardsPlugin extends Plugin {
   settings: KenkuFmSettings;
-  sounds: Sounds[];
+  sounds: Sound[];
   commands: Commands;
 
   async onload() {

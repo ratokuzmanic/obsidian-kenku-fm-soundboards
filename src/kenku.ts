@@ -1,7 +1,7 @@
 import { requestUrl, Notice } from 'obsidian';
-import { Sounds, SoundboardApiResponse, PlaybackApiResponse } from './types';
+import { Sound, SoundboardApiResponse, PlaybackApiResponse } from './types';
 
-export const getSounds = async (baseUrl: string): Promise<Sounds[]> => {
+export const getSounds = async (baseUrl: string): Promise<Sound[]> => {
   try {
     const [{ json: soundboards }, { json: playback }]: [
       { json: SoundboardApiResponse },

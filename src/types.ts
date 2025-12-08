@@ -2,7 +2,7 @@ export interface KenkuFmSettings {
   baseUrl: string;
 }
 
-export interface Sounds {
+export interface Sound {
   id: string;
   title: string;
   soundboardName: string;
