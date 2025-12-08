@@ -22,7 +22,7 @@ export default class KenkuFmSoundboardsPlugin extends Plugin {
     this.commands.registerCommands();
 
     this.addCommand({
-      id: 'kenku-fm-soundboards-reload-sounds',
+      id: 'reload-sounds',
       name: 'Reload sounds',
       callback: async () => {
         this.sounds = await getSounds(this.settings.baseUrl);

@@ -14,7 +14,7 @@ export default class Commands {
     this.unregisterCommands();
 
     this.plugin.sounds.forEach(sound => {
-      const commandId = `kenku-fm-soundboards-toggle-${sound.id}-playback`;
+      const commandId = `toggle-${sound.id}-playback`;
       this.plugin.addCommand({
         id: commandId,
         name: `${sound.isPlaying ? 'Stop playing' : 'Play'} ${sound.title} track from ${sound.soundboardName} soundboard`,
