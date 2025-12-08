@@ -36,3 +36,23 @@ export const getSounds = async (baseUrl: string): Promise<Sounds[]> => {
     return [];
   }
 };
+
+export const setPlaybackStatus = async (
+  baseUrl: string,
+  id: string,
+  shouldPlay: boolean
+): Promise<void> => {
+  try {
+    const path = shouldPlay ? '/v1/soundboard/play' : '/v1/soundboard/stop';
+    await requestUrl({
+      url: new URL(path, baseUrl).href,
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id })
+    });
+  } catch {
+    new Notice('Something went wrong');
+  }
+};
