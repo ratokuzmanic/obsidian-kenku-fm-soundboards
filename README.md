@@ -7,10 +7,10 @@ Control playback of sounds from [Kenku FM](https://www.kenku.fm/) soundboards di
 
 ## ✨ Features
 
-- 🔗 Configure Kenku FM's remote play URL  
-- ▶️ Play sounds from any soundboard in your Kenku FM library using Obsidian commands  
-- ⏹️ Stop playback for any active sound track     
-- 🔄 Force-reload soundboard data from Kenku FM if the plugin becomes out of sync  
+- 🔗 Configure Kenku FM's remote play URL
+- ▶️ Play sounds from any soundboard in your Kenku FM library using Obsidian commands
+- ⏹️ Stop playback for any active sound track
+- 🔄 Force-reload soundboard data from Kenku FM if the plugin becomes out of sync
 
 ## 📦 Installation
 
