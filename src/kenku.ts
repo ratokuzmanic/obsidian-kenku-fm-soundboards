@@ -31,8 +31,9 @@ export const getSounds = async (baseUrl: string): Promise<Sound[]> => {
       )!.title,
       isPlaying: playback.sounds.some(playing => playing.id === sound.id)
     }));
-  } catch {
-    new Notice('Something went wrong');
+  } catch (e) {
+    console.error(e);
+    new Notice('Could not load soundboards');
     return [];
   }
 };
@@ -52,7 +53,8 @@ export const setPlaybackStatus = async (
       },
       body: JSON.stringify({ id })
     });
-  } catch {
-    new Notice('Something went wrong');
+  } catch (e) {
+    console.error(e);
+    new Notice("Could not set sound's playback status");
   }
 };
