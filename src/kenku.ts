@@ -3,10 +3,7 @@ import { Sound, SoundboardApiResponse, PlaybackApiResponse } from './types';
 
 export const getSounds = async (baseUrl: string): Promise<Sound[]> => {
   try {
-    const [{ json: soundboards }, { json: playback }]: [
-      { json: SoundboardApiResponse },
-      { json: PlaybackApiResponse }
-    ] = await Promise.all([
+    const [soundboardsResponse, playbackResponse] = await Promise.all([
       requestUrl({
         url: new URL('/v1/soundboard', baseUrl).href,
         method: 'GET',
@@ -21,6 +18,10 @@ export const getSounds = async (baseUrl: string): Promise<Sound[]> => {
           'Content-Type': 'application/json'
         }
       })
+    ]);
+    const [soundboards, playback] = await Promise.all([
+      soundboardsResponse.json as Promise<SoundboardApiResponse>,
+      playbackResponse.json as Promise<PlaybackApiResponse>
     ]);
 
     return soundboards.sounds.map(sound => ({

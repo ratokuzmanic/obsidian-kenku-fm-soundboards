@@ -14,7 +14,11 @@ export default class KenkuFmSoundboardsPlugin extends Plugin {
   commands: Commands;
 
   async onload() {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    this.settings = Object.assign(
+      {},
+      DEFAULT_SETTINGS,
+      (await this.loadData()) as KenkuFmSettings
+    );
     this.addSettingTab(new SettingsTab(this.app, this));
     this.commands = new Commands(this);
 
