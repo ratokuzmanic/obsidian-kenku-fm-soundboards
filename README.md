@@ -5,20 +5,14 @@
 
 Control playback of sounds from [Kenku FM](https://www.kenku.fm/) soundboards directly from Obsidian.
 
-## ✨ Features
+## Features
 
-- 🔗 Configure Kenku FM's remote play URL
-- ▶️ Play sounds from any soundboard in your Kenku FM library using Obsidian commands
-- ⏹️ Stop playback for any active sound track
-- 🔄 Force-reload soundboard data from Kenku FM if the plugin becomes out of sync
+🔗 Configure Kenku FM's remote play URL   
+▶️ Play sounds from any soundboard in your Kenku FM library using Obsidian commands   
+⏹️ Stop playback for any active sound track   
+🔄 Force-reload soundboard data from Kenku FM if the plugin becomes out of sync   
 
-## 📦 Installation
-
-1. Copy `main.js` and `manifest.json` from the [latest release](https://github.com/ratokuzmanic/obsidian-kenku-fm-soundboards/releases/latest) into:  
-   `[VaultFolder]/.obsidian/plugins/obsidian-kenku-fm-soundboards/`
-2. Enable the plugin in the **Community plugins** tab under Obsidian's settings.
-
-## 🚀 Usage
+## How to use
 
 ### Changing Kenku FM's remote play URL
 
@@ -41,10 +35,10 @@ Control playback of sounds from [Kenku FM](https://www.kenku.fm/) soundboards di
 1. Open the **Command Palette**.
 2. Choose **Kenku FM Soundboards: Reload sounds**.
 
-> **Note:** Reloading sounds is optional but useful if the plugin state becomes out of sync with Kenku FM—for example, if you play or stop sounds directly in the Kenku FM app instead of through the plugin.
+> **Note:** Reloading sounds is optional but useful if the plugin state becomes out of sync with Kenku FM. For example, if you play or stop sounds directly in the Kenku FM app instead of through the plugin.
 
-## 🧭 Project Scope
+## Background and scope
 
 This plugin was originally created for my D&D group while I'm DMing a _Curse of Strahd_ campaign, so it focuses on a small set of features we actually use at the virtual table. I plan to keep it maintained (especially for future Obsidian updates) and fix bugs as they come up, but I don't expect to add new features unless they're something I personally need for the campaign.
 
-PRs and forks are welcome; just keep in mind that the project is intentionally lightweight and narrowly scoped.
+Crafted by a human without the use of generative AI.
