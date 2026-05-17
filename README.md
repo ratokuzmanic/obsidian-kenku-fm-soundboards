@@ -37,8 +37,4 @@ Control playback of sounds from [Kenku FM](https://www.kenku.fm/) soundboards di
 
 > **Note:** Reloading sounds is optional but useful if the plugin state becomes out of sync with Kenku FM. For example, if you play or stop sounds directly in the Kenku FM app instead of through the plugin.
 
-## Background and scope
-
-This plugin was originally created for my D&D group while I'm DMing a _Curse of Strahd_ campaign, so it focuses on a small set of features we actually use at the virtual table. I plan to keep it maintained (especially for future Obsidian updates) and fix bugs as they come up, but I don't expect to add new features unless they're something I personally need for the campaign.
-
-Crafted by a human without the use of generative AI.
+_Crafted entirely by a human without the use of generative AI._
