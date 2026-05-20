@@ -13,6 +13,11 @@ export default class KenkuFmSoundboardsPlugin extends Plugin {
   sounds: Sound[];
   commands: Commands;
 
+  async loadSoundsInBackground(baseUrl: string) {
+    this.sounds = await getSounds(baseUrl);
+    this.commands.registerCommands();
+  }
+
   async onload() {
     this.settings = Object.assign(
       {},
@@ -22,8 +27,7 @@ export default class KenkuFmSoundboardsPlugin extends Plugin {
     this.addSettingTab(new SettingsTab(this.app, this));
     this.commands = new Commands(this);
 
-    this.sounds = await getSounds(this.settings.baseUrl);
-    this.commands.registerCommands();
+    this.loadSoundsInBackground(this.settings.baseUrl);
 
     this.addCommand({
       id: 'reload-sounds',
