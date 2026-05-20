@@ -1,23 +1,37 @@
 import { requestUrl, Notice } from 'obsidian';
 import { Sound, SoundboardApiResponse, PlaybackApiResponse } from './types';
 
+const withTimeout = <T>(promise: Promise<T>, ms: number): Promise<T> =>
+  Promise.race([
+    promise,
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error('Request timeout')), ms)
+    )
+  ]);
+
 export const getSounds = async (baseUrl: string): Promise<Sound[]> => {
   try {
     const [soundboardsResponse, playbackResponse] = await Promise.all([
-      requestUrl({
-        url: new URL('/v1/soundboard', baseUrl).href,
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }),
-      requestUrl({
-        url: new URL('/v1/soundboard/playback', baseUrl).href,
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
+      withTimeout(
+        requestUrl({
+          url: new URL('/v1/soundboard', baseUrl).href,
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }),
+        3000
+      ),
+      withTimeout(
+        requestUrl({
+          url: new URL('/v1/soundboard/playback', baseUrl).href,
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }),
+        3000
+      )
     ]);
     const [soundboards, playback] = await Promise.all([
       soundboardsResponse.json as Promise<SoundboardApiResponse>,
